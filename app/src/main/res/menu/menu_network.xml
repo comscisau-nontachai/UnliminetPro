@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<item
+    android:id="@+id/menu_truemove"
+    app:showAsAction="collapseActionView"
+    android:title="true move">
+</item>
+    <item
+        android:id="@+id/menu_12call"
+        android:title="12call">
+    </item>
+    <item
+        android:id="@+id/menu_dtac"
+        android:title="dtac">
+    </item>
+</menu>

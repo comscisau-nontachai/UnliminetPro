@@ -1,0 +1,24 @@
+{
+  "network": [
+    {
+      "name": "dtac",
+      "price": "29",
+      "day": "1",
+      "tel": "*104*377*1473005# หกดหกดหกด",
+      "qty_net": "เน็ตไม่จำกัด",
+      "speed_net": "1 Mbps ไม่ลดสปีด",
+      "free_call": "",
+      "free_wifi": ""
+    },
+    {
+      "name": "dtac",
+      "price": "31",
+      "day": "1",
+      "tel": "*104*387*1473005# ",
+      "qty_net": "เน็ตไม่จำกัด",
+      "speed_net": " 4 Mbps ไม่ลดสปีด",
+      "free_call": "",
+      "free_wifi": ""
+    }
+  ]
+}
