@@ -2,186 +2,205 @@
   "network": [
     {
       "name": "true",
-      "price": "22",
-      "day": "1",
+      "price": 22,
+      "day": 1,
       "tel": "*900*3703*17259619#",
       "qty_net": "เน็ตไม่จำกัด",
       "speed_net": "512 Kbps ไม่ลดสปีด",
       "free_call": "",
-      "free_wifi": ""
+      "free_wifi": "",
+      "regis_area":""
     },
     {
       "name": "true",
-      "price": "25",
-      "day": "1",
+      "price": 25,
+      "day": 1,
       "tel": "*900*3704*17259619#",
       "qty_net": "เน็ตไม่จำกัด",
       "speed_net": "1 Mbps ไม่ลดสปีด",
       "free_call": "",
-      "free_wifi": ""
+      "free_wifi": "",
+      "regis_area":""
     },
     {
       "name": "true",
-      "price": "28",
-      "day": "1",
+      "price": 28,
+      "day": 1,
       "tel": " *900*3705*17259619#",
       "qty_net": "เน็ตไม่จำกัด",
       "speed_net": "2 Mbps ไม่ลดสปีด",
       "free_call": "",
-      "free_wifi": ""
+      "free_wifi": "",
+      "regis_area":""
     },
     {
       "name": "true",
-      "price": "32",
-      "day": "1",
+      "price": 32,
+      "day": 1,
       "tel": "*900*3706*17259619# ",
       "qty_net": "เน็ตไม่จำกัด",
       "speed_net": "4 Mbps ไม่ลดสปีด",
       "free_call": "",
-      "free_wifi": ""
+      "free_wifi": "",
+      "regis_area":""
     },
     {
       "name": "true",
-      "price": "45",
-      "day": "1",
+      "price": 45,
+      "day": 1,
       "tel": "*900*3707*17259619#",
       "qty_net": "เน็ตไม่จำกัด",
       "speed_net": "6 Mbps ไม่ลดสปีด",
       "free_call": "",
-      "free_wifi": ""
+      "free_wifi": "",
+      "regis_area":""
     },
     {
       "name": "true",
-      "price": "55",
-      "day": "1",
+      "price": 55,
+      "day":1,
       "tel": "*900*3708*17259619#",
       "qty_net": "เน็ตไม่จำกัด",
       "speed_net": "10 Mbps ไม่ลดสปีด",
       "free_call": "",
-      "free_wifi": ""
+      "free_wifi": "",
+      "regis_area":""
     },
     {
       "name": "true",
-      "price": "9",
-      "day": "1",
+      "price": 9,
+      "day": 1,
       "tel": "*900*3301*17259619#",
       "qty_net": "100 MB",
       "speed_net": "ใช้เน็ตความเร็วสูงสุด จนครบปริมาณ",
       "free_call": "",
-      "free_wifi": ""
+      "free_wifi": "",
+      "regis_area":""
     },
     {
       "name": "true",
-      "price": "15",
-      "day": "1",
+      "price": 15,
+      "day": 1,
       "tel": "*900*3306*17259619# ",
       "qty_net": "200 MB",
       "speed_net": "ใช้เน็ตความเร็วสูงสุด จนครบปริมาณ",
       "free_call": "",
-      "free_wifi": ""
+      "free_wifi": "",
+      "regis_area":""
     },
     {
       "name": "true",
-      "price": "39",
-      "day": "1",
+      "price": 39,
+      "day": 1,
       "tel": "*900*1924*17259619#",
       "qty_net": "1.5 GB",
       "speed_net": "ใช้เน็ตความเร็วสูงสุด จนครบปริมาณ",
       "free_call": "",
-      "free_wifi": ""
+      "free_wifi": "",
+      "regis_area":""
     },
     {
       "name": "true",
-      "price": "99",
-      "day": "1",
+      "price": 99,
+      "day": 1,
       "tel": "*900*1926*17259619#",
       "qty_net": " 2 GB",
       "speed_net": "ใช้เน็ตความเร็วสูงสุด จนครบปริมาณ",
       "free_call": "",
-      "free_wifi": ""
+      "free_wifi": "",
+      "regis_area":""
     }
     ,
     {
       "name": "true",
-      "price": "45",
-      "day": "2",
+      "price": 45,
+      "day": 2,
       "tel": "*900*3709*17259619#",
       "qty_net": "เน็ตไม่จำกัด",
       "speed_net": "1 Mbps ไม่ลดสปีด",
       "free_call": "",
-      "free_wifi": ""
+      "free_wifi": "",
+      "regis_area":""
     },{
       "name": "true",
-      "price": "59",
-      "day": "2",
+      "price": 59,
+      "day": 2,
       "tel": "*900*3710*17259619#",
       "qty_net": "เน็ตไม่จำกัด",
       "speed_net": "4 Mbps ไม่ลดสปีด",
       "free_call": "",
-      "free_wifi": ""
+      "free_wifi": "",
+      "regis_area":""
     },{
       "name": "true",
-      "price": "85",
-      "day": "2",
+      "price": 85,
+      "day": 2,
       "tel": "*900*3711*17259619#",
       "qty_net": "เน็ตไม่จำกัด",
       "speed_net": "6 Mbps ไม่ลดสปีด",
       "free_call": "",
-      "free_wifi": ""
+      "free_wifi": "",
+      "regis_area":""
     },{
       "name": "true",
-      "price": "100",
-      "day": "2",
+      "price": 100,
+      "day": 2,
       "tel": "*900*3712*17259619#",
       "qty_net": "เน็ตไม่จำกัด",
       "speed_net": "10 Mbps ไม่ลดสปีด",
       "free_call": "",
-      "free_wifi": ""
+      "free_wifi": "",
+      "regis_area":""
     },{
       "name": "true",
-      "price": "35",
-      "day": "2",
+      "price": 35,
+      "day": 2,
       "tel": "*900*8334*17259619#",
       "qty_net": "เน็ตไม่จำกัด",
       "speed_net": "1 Mbps จนครบ 750 MB แล้วความเร็วจะลดเหลือ 128 Kbps",
       "free_call": "",
-      "free_wifi": ""
+      "free_wifi": "",
+      "regis_area":""
     },{
       "name": "true",
-      "price": "45",
-      "day": "2",
+      "price": 45,
+      "day": 2,
       "tel": "*900*8336*17259619#",
       "qty_net": "เน็ตไม่จำกัด",
       "speed_net": "2 Mbps จนครบ 1.2 GB แล้วความเร็วจะลดเหลือ 128 Kbps",
       "free_call": "",
-      "free_wifi": ""
+      "free_wifi": "",
+      "regis_area":""
     },{
       "name": "true",
-      "price": "55",
-      "day": "2",
+      "price": 55,
+      "day": 2,
       "tel": "*900*8339*17259619#",
       "qty_net": "เน็ตไม่จำกัด",
       "speed_net": "4 Mbps จนครบ 1.75 GB แล้วความเร็วจะลดเหลือ 128 Kbps",
       "free_call": "",
-      "free_wifi": ""
+      "free_wifi": "",
+      "regis_area":""
     },{
       "name": "true",
-      "price": "75",
-      "day": "2",
+      "price": 75,
+      "day": 2,
       "tel": "*900*8340*17259619#",
       "qty_net": "เน็ตไม่จำกัด",
       "speed_net": " 6 Mbps จนครบ 2.5 GB แล้วความเร็วจะลดเหลือ 128 Kbps",
       "free_call": "",
-      "free_wifi": ""
+      "free_wifi": "",
+      "regis_area":""
     },{
       "name": "true",
-      "price": "85",
-      "day": "2",
+      "price": 85,
+      "day": 2,
       "tel": "*900*8341*17259619# ",
       "qty_net": "เน็ตไม่จำกัด",
       "speed_net": "10 Mbps จนครบ 3.5 GB แล้วความเร็วจะลดเหลือ 128 Kbps",
       "free_call": "",
-      "free_wifi": ""
+      "free_wifi": "",
+      "regis_area":""
     },
     {
       "name": "true",
@@ -191,7 +210,8 @@
       "qty_net": "เน็ตไม่จำกัด",
       "speed_net": "1 Mbps ไม่ลดสปีด",
       "free_call": "",
-      "free_wifi": ""
+      "free_wifi": "",
+      "regis_area":""
     },{
       "name": "true",
       "price": 100,
@@ -200,7 +220,8 @@
       "qty_net": "เน็ตไม่จำกัด",
       "speed_net": "4 Mbps ไม่ลดสปีด",
       "free_call": "",
-      "free_wifi": ""
+      "free_wifi": "",
+      "regis_area":""
     }
     ,
     {
@@ -211,7 +232,8 @@
       "qty_net": "เน็ตไม่จำกัด",
       "speed_net": "512 Kbps ไม่ลดสปีด",
       "free_call": "",
-      "free_wifi": ""
+      "free_wifi": "",
+      "regis_area":""
     },{
       "name": "true",
       "price": 120 ,
@@ -220,7 +242,8 @@
       "qty_net": "เน็ตไม่จำกัด",
       "speed_net": "1 Mbps ไม่ลดสปีด",
       "free_call": "",
-      "free_wifi": ""
+      "free_wifi": "",
+      "regis_area":""
     },
     {
       "name": "true",
@@ -230,7 +253,8 @@
       "qty_net": "เน็ตไม่จำกัด",
       "speed_net": "2 Mbps ไม่ลดสปีด",
       "free_call": "",
-      "free_wifi": ""
+      "free_wifi": "",
+      "regis_area":""
     },{
       "name": "true",
       "price": 220,
@@ -239,7 +263,8 @@
       "qty_net": "เน็ตไม่จำกัด",
       "speed_net": "4 Mbps ไม่ลดสปีด",
       "free_call": "",
-      "free_wifi": ""
+      "free_wifi": "",
+      "regis_area":""
     },{
       "name": "true",
       "price":270 ,
@@ -248,7 +273,8 @@
       "qty_net": "เน็ตไม่จำกัด",
       "speed_net": "6 Mbps ไม่ลดสปีด",
       "free_call": "",
-      "free_wifi": ""
+      "free_wifi": "",
+      "regis_area":""
     },{
       "name": "true",
       "price":330 ,
@@ -257,7 +283,8 @@
       "qty_net": "เน็ตไม่จำกัด",
       "speed_net": "10 Mbps ไม่ลดสปีด",
       "free_call": "",
-      "free_wifi": ""
+      "free_wifi": "",
+      "regis_area":""
     },{
       "name": "true",
       "price": 129,
@@ -266,7 +293,8 @@
       "qty_net": "เน็ตไม่จำกัด",
       "speed_net": "1 Mbps ไม่ลดสปีด",
       "free_call": "โทรฟรี ในเครือข่าย ไม่จำกัดครั้ง ครั้งละไม่เกิน 60 นาที",
-      "free_wifi": ""
+      "free_wifi": "",
+      "regis_area":""
     },
     {
       "name": "true",
@@ -276,7 +304,8 @@
       "qty_net": "เน็ตไม่จำกัด",
       "speed_net": "4 Mbps ไม่ลดสปีด",
       "free_call": "",
-      "free_wifi": ""
+      "free_wifi": "",
+      "regis_area":""
     }
     ,
     {
@@ -287,7 +316,8 @@
       "qty_net": "เน็ตไม่จำกัด",
       "speed_net": "1 Mbps ไม่ลดสปีด",
       "free_call": "โทรฟรี ในเครือข่าย ไม่จำกัดครั้ง ครั้งละไม่เกิน 60 นาที",
-      "free_wifi": ""
+      "free_wifi": "",
+      "regis_area":""
     },{
       "name": "true",
       "price": 365,
@@ -296,7 +326,8 @@
       "qty_net": "เน็ตไม่จำกัด",
       "speed_net": " 4 Mbps ไม่ลดสปีด",
       "free_call": "โทรฟรี ในเครือข่าย ไม่จำกัดครั้ง ครั้งละไม่เกิน 60 นาที",
-      "free_wifi": ""
+      "free_wifi": "",
+      "regis_area":""
     },
     {
       "name": "true",
@@ -306,7 +337,8 @@
       "qty_net": "เน็ตไม่จำกัด",
       "speed_net": "512 Kbps ไม่ลดสปีด",
       "free_call": "",
-      "free_wifi": ""
+      "free_wifi": "",
+      "regis_area":""
     },{
       "name": "true",
       "price":350 ,
@@ -315,7 +347,8 @@
       "qty_net": "เน็ตไม่จำกัด",
       "speed_net": "1 Mbps ไม่ลดสปีด",
       "free_call": "",
-      "free_wifi": ""
+      "free_wifi": "",
+      "regis_area":""
     },{
       "name": "true",
       "price": 450,
@@ -324,7 +357,8 @@
       "qty_net": "เน็ตไม่จำกัด",
       "speed_net": "2 Mbps ไม่ลดสปีด",
       "free_call": "",
-      "free_wifi": ""
+      "free_wifi": "",
+      "regis_area":""
     },{
       "name": "true",
       "price":650 ,
@@ -333,7 +367,8 @@
       "qty_net": "เน็ตไม่จำกัด",
       "speed_net": "4 Mbps ไม่ลดสปีด",
       "free_call": "",
-      "free_wifi": ""
+      "free_wifi": "",
+      "regis_area":""
     },{
       "name": "true",
       "price":850 ,
@@ -342,7 +377,8 @@
       "qty_net": "เน็ตไม่จำกัด",
       "speed_net": "6 Mbps ไม่ลดสปีด",
       "free_call": "",
-      "free_wifi": ""
+      "free_wifi": "",
+      "regis_area":""
     },{
       "name": "true",
       "price":500 ,
@@ -351,7 +387,8 @@
       "qty_net": "เน็ตไม่จำกัด",
       "speed_net": "1 Mbps ไม่ลดสปีด",
       "free_call": "โทรฟรี ในเครือข่าย ไม่จำกัดครั้ง ครั้งละไม่เกิน 60 นาที",
-      "free_wifi": "ใช้งาน TrueMove-H Wifi ฟรี"
+      "free_wifi": "ใช้งาน TrueMove-H Wifi ฟรี",
+      "regis_area":""
     },{
       "name": "true",
       "price": 650,
@@ -360,7 +397,8 @@
       "qty_net": "เน็ตไม่จำกัด",
       "speed_net": "4 Mbps ไม่ลดสปีด",
       "free_call": "โทรฟรี ในเครือข่าย ไม่จำกัดครั้ง ครั้งละไม่เกิน 60 นาที",
-      "free_wifi": "ใช้งาน TrueMove-H Wifi ฟรี"
+      "free_wifi": "ใช้งาน TrueMove-H Wifi ฟรี",
+      "regis_area":""
     },{
       "name": "true",
       "price":199 ,
@@ -369,7 +407,8 @@
       "qty_net": "เน็ตไม่จำกัด",
       "speed_net": "สูงสุด จนครบ 1.5 GB แล้วความเร็วจะลดเหลือ 128Kbps",
       "free_call": "",
-      "free_wifi": ""
+      "free_wifi": "",
+      "regis_area":""
     },{
       "name": "true",
       "price":300 ,
@@ -378,7 +417,8 @@
       "qty_net": "เน็ตไม่จำกัด",
       "speed_net": "512 Kbps จนครบ 7.5 GB แล้วความเร็วจะลดเหลือ 128 Kbps",
       "free_call": "",
-      "free_wifi": ""
+      "free_wifi": "",
+      "regis_area":""
     },{
       "name": "true",
       "price": 350,
@@ -387,7 +427,8 @@
       "qty_net": "เน็ตไม่จำกัด",
       "speed_net": "1 Mbps จนครบ 7.5 GB แล้วความเร็วจะลดเหลือ 128 Kbps",
       "free_call": "",
-      "free_wifi": ""
+      "free_wifi": "",
+      "regis_area":""
     },{
       "name": "true",
       "price":450 ,
@@ -396,7 +437,8 @@
       "qty_net": "เน็ตไม่จำกัด",
       "speed_net": "2 Mbps จนครบ 12.5 GB แล้วความเร็วจะลดเหลือ 128 Kbps",
       "free_call": "",
-      "free_wifi": ""
+      "free_wifi": "",
+      "regis_area":""
     },{
       "name": "true",
       "price":650 ,
@@ -405,7 +447,8 @@
       "qty_net": "เน็ตไม่จำกัด",
       "speed_net": "4 Mbps จนครบ 20 GB แล้วความเร็วจะลดเหลือ 128 Kbps",
       "free_call": "",
-      "free_wifi": ""
+      "free_wifi": "",
+      "regis_area":""
     },{
       "name": "true",
       "price":850 ,
@@ -414,7 +457,8 @@
       "qty_net": "เน็ตไม่จำกัด",
       "speed_net": "6 Mbps จนครบ 25 GB แล้วความเร็วจะลดเหลือ 128 Kbps",
       "free_call": "",
-      "free_wifi": ""
+      "free_wifi": "",
+      "regis_area":""
     },{
       "name": "true",
       "price": 1100,
@@ -423,7 +467,8 @@
       "qty_net": "เน็ตไม่จำกัด",
       "speed_net": "10 Mbps จนครบ 33 GB แล้วความเร็วจะลดเหลือ 128 Kbps",
       "free_call": "",
-      "free_wifi": ""
+      "free_wifi": "",
+      "regis_area":""
     }
     ,
     {
@@ -434,7 +479,8 @@
       "qty_net": "เน็ตไม่จำกัด",
       "speed_net": "1 Mbps ไม่ลดสปีด",
       "free_call": "",
-      "free_wifi": ""
+      "free_wifi": "",
+      "regis_area":""
     },{
       "name": "true",
       "price":1000 ,
@@ -443,7 +489,8 @@
       "qty_net": "เน็ตไม่จำกัด",
       "speed_net": "2 Mbps ไม่ลดสปีด",
       "free_call": "",
-      "free_wifi": ""
+      "free_wifi": "",
+      "regis_area":""
     },{
       "name": "true",
       "price": 1200,
@@ -452,7 +499,8 @@
       "qty_net": "เน็ตไม่จำกัด",
       "speed_net": "4 Mbps ไม่ลดสปีด",
       "free_call": "โทรฟรี ในเครือข่าย ไม่จำกัดครั้ง ครั้งละไม่เกิน 60 นาที",
-      "free_wifi": ""
+      "free_wifi": "",
+      "regis_area":""
     },{
       "name": "true",
       "price": 1200,
@@ -461,7 +509,8 @@
       "qty_net": "เน็ตไม่จำกัด",
       "speed_net": "1 Mbps ไม่ลดสปีด",
       "free_call": "",
-      "free_wifi": ""
+      "free_wifi": "",
+      "regis_area":""
     },{
       "name": "true",
       "price":1500 ,
@@ -470,7 +519,8 @@
       "qty_net": "เน็ตไม่จำกัด",
       "speed_net": "2 Mbps ไม่ลดสปีด",
       "free_call": "",
-      "free_wifi": ""
+      "free_wifi": "",
+      "regis_area":""
     },{
       "name": "true",
       "price": 2100,
@@ -479,16 +529,18 @@
       "qty_net": "เน็ตไม่จำกัด",
       "speed_net": "4 Mbps ไม่ลดสปีด",
       "free_call": "โทรฟรี ในเครือข่าย ไม่จำกัดครั้ง ครั้งละไม่เกิน 60 นาที",
-      "free_wifi": ""
+      "free_wifi": "",
+      "regis_area":""
     },{
       "name": "true",
       "price":1800 ,
       "day": 365,
       "tel": "*900*9960*17259619#",
-      "qty_net": "*900*9960*17259619#",
+      "qty_net": "เน็ตไม่จำกัด",
       "speed_net": "1 Mbps ไม่ลดสปีด",
       "free_call": "",
-      "free_wifi": ""
+      "free_wifi": "",
+      "regis_area":""
     },{
       "name": "true",
       "price": 2600,
@@ -497,7 +549,8 @@
       "qty_net": "เน็ตไม่จำกัด",
       "speed_net": "2 Mbps ไม่ลดสปีด",
       "free_call": "",
-      "free_wifi": ""
+      "free_wifi": "",
+      "regis_area":""
     },{
       "name": "true",
       "price":3600 ,
@@ -506,7 +559,8 @@
       "qty_net": "เน็ตไม่จำกัด",
       "speed_net": "4 Mbps ไม่ลดสปีด",
       "free_call": "โทรฟรี ในเครือข่าย ไม่จำกัดครั้ง ครั้งละไม่เกิน 60 นาที",
-      "free_wifi": ""
+      "free_wifi": "",
+      "regis_area":""
     }
   ]
 }

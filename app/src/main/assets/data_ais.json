@@ -2,23 +2,386 @@
   "network": [
     {
       "name": "ais",
-      "price": "29",
-      "day": "1",
-      "tel": "*104*377*1473005# 33332ddddกกก",
+      "price": 25,
+      "day": 1,
+      "tel": "*777*7021*235372#",
       "qty_net": "เน็ตไม่จำกัด",
       "speed_net": "1 Mbps ไม่ลดสปีด",
-      "free_call": "โทรฟรี ในเครือข่าย 05.00 - 18.00 น. ครั้งละไม่เกิน 60 นาที",
-      "free_wifi": ""
+      "free_call": "",
+      "free_wifi": "",
+      "regis_area":""
     },
     {
       "name": "ais",
-      "price": "31",
-      "day": "1",
-      "tel": "*104*387*1473005# ",
+      "price": 32,
+      "day": 1,
+      "tel": " *777*620*235372# ",
       "qty_net": "เน็ตไม่จำกัด",
       "speed_net": " 4 Mbps ไม่ลดสปีด",
       "free_call": "",
-      "free_wifi": ""
+      "free_wifi": "",
+      "regis_area":""
+       
+    },
+    {
+      "name": "ais",
+      "price": 45,
+      "day": 1,
+      "tel": "  *777*7209*235372# ",
+      "qty_net": "เน็ตไม่จำกัด",
+      "speed_net": " 6 Mbps ไม่ลดสปีด",
+      "free_call": "",
+      "free_wifi": "",
+      "regis_area":""
+      
+    },
+    {
+      "name": "ais",
+      "price": 55,
+      "day": 1,
+      "tel": "   *777*7386*235372#",
+      "qty_net": "เน็ตไม่จำกัด",
+      "speed_net": " 10 Mbps ไม่ลดสปีด",
+      "free_call": "",
+      "free_wifi": "",
+      "regis_area":""
+      
+    },
+    {
+      "name": "ais",
+      "price": 28,
+      "day": 1,
+      "tel": " *777*4045*235372#",
+      "qty_net": "เน็ตไม่จำกัด",
+      "speed_net": " 512 Kbps ไม่ลดสปีด",
+      "free_call": "โทรฟรี ในเครือข่าย 05.00 - 18.00 น. ครั้งละไม่เกิน 60 นาที",
+      "free_wifi": "",
+      "regis_area":""
+     
+    },
+    {
+      "name": "ais",
+      "price": 29,
+      "day": 1,
+      "tel": " *777*7000*235372# ",
+      "qty_net": "เน็ตไม่จำกัด",
+      "speed_net": " 512 Kbps ไม่ลดสปีด",
+      "free_call": "โทรฟรี ในเครือข่าย ไม่จำกัดครั้ง ครั้งละไม่เกิน 60 นาที",
+      "free_wifi": "",
+      "regis_area":""
+     
+    },
+    {
+      "name": "ais",
+      "price": 39,
+      "day": 1,
+      "tel": "  *777*7077*235372#  ",
+      "qty_net": "เน็ตไม่จำกัด",
+      "speed_net": " 512 Kbps ไม่ลดสปีด",
+      "free_call": "โทรฟรี ทุกเครือข่าย ครั้งละไม่เกิน 30 นาที",
+      "free_wifi": "",
+      "regis_area":""
+     
+    },
+    {
+      "name": "ais",
+      "price": 19,
+      "day": 1,
+      "tel": "   *777*7024*235372# ",
+      "qty_net": " 1 GB",
+      "speed_net": "ใช้เน็ตความเร็วสูงสุด จนครบปริมาณ",
+      "free_call": "",
+      "free_wifi": "",
+      "regis_area":"สมัครในเขตภาคอิสานเท่านั้น"
+      
+    },
+    {
+      "name": "ais",
+      "price": 19,
+      "day": 1,
+      "tel": " *777*7092*235372# ",
+      "qty_net": " 1 GB",
+      "speed_net": "ใช้เน็ตความเร็วสูงสุด จนครบปริมาณ",
+      "free_call": "",
+      "free_wifi": "",
+      "regis_area":"สมัครในเขตภาคเหนือเท่านั้น"
+      
+    },
+    {
+      "name": "ais",
+      "price": 19,
+      "day": 1,
+      "tel": "  *777*7342*235372# ",
+      "qty_net": "1 GB",
+      "speed_net": "ใช้เน็ตความเร็วสูงสุด จนครบปริมาณ",
+      "free_call": "",
+      "free_wifi": "",
+      "regis_area":"สมัครในเขตภาคใต้เท่านั้น"
+      
+    },
+    {
+      "name": "ais",
+      "price": 45,
+      "day": 1,
+      "tel": "  *777*7032*235372# ",
+      "qty_net": " 2 GB",
+      "speed_net": "ใช้เน็ตความเร็วสูงสุด จนครบปริมาณ",
+      "free_call": "",
+      "free_wifi": "",
+      "regis_area":""
+      
+    },
+    {
+      "name": "ais",
+      "price": 49,
+      "day":1,
+      "tel": "*777*7028*235372# ",
+      "qty_net": " 3 GB",
+      "speed_net": "ใช้เน็ตความเร็วสูงสุด จนครบปริมาณ",
+      "free_call": "",
+      "free_wifi": "",
+      "regis_area":""
+     
+    },
+    {
+      "name": "ais",
+      "price": 69,
+      "day": 1,
+      "tel": "*777*7033*235372#",
+      "qty_net": " 4 GB",
+      "speed_net": "ใช้เน็ตความเร็วสูงสุด จนครบปริมาณ",
+      "free_call": "",
+      "free_wifi": "",
+      "regis_area":""
+     
+    },
+    {
+      "name": "ais",
+      "price": 89,
+      "day": 7,
+      "tel": " *777*7009*235372#",
+      "qty_net": "เน็ตไม่จำกัด",
+      "speed_net": "512 Kbps ไม่ลดสปีด",
+      "free_call": "",
+      "free_wifi": "",
+      "regis_area":""
+     
+    },
+    {
+      "name": "ais",
+      "price": 120,
+      "day":7,
+      "tel": " *777*7098*235372# ",
+      "qty_net": "เน็ตไม่จำกัด",
+      "speed_net": "1 Mbps ไม่ลดสปีด",
+      "free_call": "",
+      "free_wifi": "",
+      "regis_area":""
+     
+    },
+    {
+      "name": "ais",
+      "price": 150,
+      "day": 7,
+      "tel": "*777*7382*235372#",
+      "qty_net": "เน็ตไม่จำกัด",
+      "speed_net": "2 Mbps ไม่ลดสปีด",
+      "free_call": "",
+      "free_wifi": "",
+      "regis_area":""
+      
+    },
+    {
+      "name": "ais",
+      "price": 22,
+      "day": 7,
+      "tel": "*777*7154*235372#",
+      "qty_net": "เน็ตไม่จำกัด",
+      "speed_net": "4 Mbps ไม่ลดสปีด",
+      "free_call": "",
+      "free_wifi": "",
+      "regis_area":""
+      
+    },
+    {
+      "name": "ais",
+      "price": 270,
+      "day": 7,
+      "tel": "*777*7210*235372#",
+      "qty_net": "เน็ตไม่จำกัด",
+      "speed_net": "6 Mbps ไม่ลดสปีด",
+      "free_call": "",
+      "free_wifi": "",
+      "regis_area":""
+      
+    },
+    {
+      "name": "ais",
+      "price": 330,
+      "day": 7,
+      "tel": "*777*7388*235372#",
+      "qty_net": "เน็ตไม่จำกัด",
+      "speed_net": "10 Mbps ไม่ลดสปีด",
+      "free_call": "",
+      "free_wifi": "",
+      "regis_area":""
+      
+    },
+    {
+      "name": "ais",
+      "price": 129,
+      "day": "7",
+      "tel": "*777*7241*235372#",
+      "qty_net": "เน็ตไม่จำกัด",
+      "speed_net": "1 Mbps ไม่ลดสปีด",
+      "free_call": "",
+      "free_wifi": "",
+      "regis_area":""
+      
+    },
+    {
+      "name": "ais",
+      "price": 299,
+      "day": 7,
+      "tel": "*777*7242*235372#",
+      "qty_net": "เน็ตไม่จำกัด",
+      "speed_net": "4 Mbps ไม่ลดสปีด",
+      "free_call": "",
+      "free_wifi": "",
+      "regis_area":""
+      
+    },
+    {
+      "name": "ais",
+      "price": 99,
+      "day": 7,
+      "tel": "*777*746*235372# ",
+      "qty_net": " 1 GB",
+      "speed_net": "ใช้เน็ตความเร็วสูงสุด จนครบปริมาณ",
+      "free_call": "",
+      "free_wifi": "",
+      "regis_area":""
+      
+    },
+    {
+      "name": "ais",
+      "price": 119,
+      "day":7,
+      "tel": "*777*7048*235372# ",
+      "qty_net": " 3 GB",
+      "speed_net": "ใช้เน็ตความเร็วสูงสุด จนครบปริมาณ",
+      "free_call": "",
+      "free_wifi": "",
+      "regis_area":""
+     
+    },
+    {
+      "name": "ais",
+      "price": 150,
+      "day": 7,
+      "tel": " *777*7050*235372# ",
+      "qty_net": " 5 GB",
+      "speed_net": "ใช้เน็ตความเร็วสูงสุด จนครบปริมาณ",
+      "free_call": "",
+      "free_wifi": "",
+      "regis_area":""
+      
+    },
+    {
+      "name": "ais",
+      "price": 350 ,
+      "day": 30,
+      "tel": " *777*7153*235372#  ",
+      "qty_net": "เน็ตไม่จำกัด ",
+      "speed_net": " 1 Mbps ไม่ลดสปีด",
+      "free_call": "",
+      "free_wifi": "",
+      "regis_area":""
+      
+    },
+    {
+      "name": "ais",
+      "price": 650,
+      "day": 30,
+      "tel": " *777*7159*235372# ",
+      "qty_net": "เน็ตไม่จำกัด ",
+      "speed_net": " 4 Mbps ไม่ลดสปีด",
+      "free_call": "",
+      "free_wifi": "",
+      "regis_area":""
+     
+    },
+    {
+      "name": "ais",
+      "price": 850,
+      "day": 30,
+      "tel": " *777*7159*235372# ",
+      "qty_net": "เน็ตไม่จำกัด ",
+      "speed_net": " 6 Mbps ไม่ลดสปีด",
+      "free_call": "",
+      "free_wifi": "",
+      "regis_area":""
+      
+    },
+    {
+      "name": "ais",
+      "price": 800,
+      "day": 90,
+      "tel": " *777*7379*235372# ",
+      "qty_net": "เน็ตไม่จำกัด ",
+      "speed_net": " 1 Mbps ไม่ลดสปีด",
+      "free_call": "",
+      "free_wifi": "",
+      "regis_area":""
+     
+    },
+    {
+      "name": "ais",
+      "price": 1285 ,
+      "day": 90,
+      "tel": " *777*7398*235372#  ",
+      "qty_net": "เน็ตไม่จำกัด ",
+      "speed_net": " 4 Mbps ไม่ลดสปีด",
+      "free_call": "",
+      "free_wifi": "",
+      "regis_area":""
+     
+    },
+    {
+      "name": "ais",
+      "price": 1925,
+      "day": 90,
+      "tel": "*777*7399*235372#",
+      "qty_net": "เน็ตไม่จำกัด ",
+      "speed_net": " 10 Mbps ไม่ลดสปีด",
+      "free_call": "",
+      "free_wifi": "",
+      "regis_area":""
+     
+    },
+    {
+      "name": "ais",
+      "price": 1200,
+      "day": 180,
+      "tel": "*777*7328*235372#",
+      "qty_net": "เน็ตไม่จำกัด ",
+      "speed_net": "1 Mbps ไม่ลดสปีด",
+      "free_call": "",
+      "free_wifi": "",
+      "regis_area":""
+      
+    },
+    {
+      "name": "ais",
+      "price": 1800,
+      "day": 365,
+      "tel": "*777*7329*235372#",
+      "qty_net": "เน็ตไม่จำกัด ",
+      "speed_net": "1 Mbps ไม่ลดสปีด",
+      "free_call": "",
+      "free_wifi": "",
+      "regis_area":""
+      
     }
   ]
 }

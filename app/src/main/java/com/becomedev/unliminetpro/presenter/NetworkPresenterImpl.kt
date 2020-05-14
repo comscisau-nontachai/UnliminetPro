@@ -1,12 +1,12 @@
 package com.becomedev.unliminetpro.presenter
 
-import android.content.Context
 import com.becomedev.unliminetpro.model.NetworkData
-import com.google.gson.Gson
 
-class NetworkPresenterImpl(val mainView: NetworkContract.MainView) : NetworkContract.Presenter {
+class NetworkPresenterImpl(val fragmentView: NetworkContract.FragmentView) : NetworkContract.Presenter {
 
     override fun onLoadJsonDataFinish(networkList: ArrayList<NetworkData.SubNetworkData>) {
-        mainView.setDataToRecyclerView(networkList)
+        fragmentView.setDataToRecyclerView(networkList)
     }
+
+
 }

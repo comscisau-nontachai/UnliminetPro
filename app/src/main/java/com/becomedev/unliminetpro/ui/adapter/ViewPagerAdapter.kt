@@ -26,4 +26,8 @@ class ViewPagerAdapter(fragmentManager: FragmentManager) : FragmentPagerAdapter(
         }
     }
 
+    override fun getItemPosition(`object`: Any): Int {
+        return super.getItemPosition(`object`)
+    }
+
 }

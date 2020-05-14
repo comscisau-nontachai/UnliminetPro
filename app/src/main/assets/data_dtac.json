@@ -2,23 +2,302 @@
   "network": [
     {
       "name": "dtac",
-      "price": "29",
-      "day": "1",
-      "tel": "*104*377*1473005# หกดหกดหกด",
-      "qty_net": "เน็ตไม่จำกัด",
-      "speed_net": "1 Mbps ไม่ลดสปีด",
+      "price": 29 ,
+      "day":1,
+      "tel": "*104*377*1473005# ",
+      "qty_net": "เน็ตไม่จำกัด ",
+      "speed_net": " 1 Mbps ไม่ลดสปีด",
       "free_call": "",
-      "free_wifi": ""
+      "free_wifi": "",
+      "regis_area":""
+      
     },
     {
       "name": "dtac",
-      "price": "31",
-      "day": "1",
-      "tel": "*104*387*1473005# ",
-      "qty_net": "เน็ตไม่จำกัด",
+      "price": 31 ,
+      "day":1,
+      "tel": " *104*387*1473005#  ",
+      "qty_net": "เน็ตไม่จำกัด ",
       "speed_net": " 4 Mbps ไม่ลดสปีด",
       "free_call": "",
-      "free_wifi": ""
+      "free_wifi": "",
+      "regis_area":""
+    },
+    {
+      "name": "dtac",
+      "price": 50 ,
+      "day":1,
+      "tel": "  *104*397*1473005#  ",
+      "qty_net": "เน็ตไม่จำกัด ",
+      "speed_net": " 10 Mbps ไม่ลดสปีด",
+      "free_call": "",
+      "free_wifi": "",
+      "regis_area":""
+      
+    },
+    {
+      "name": "dtac",
+      "price": 15 ,
+      "day":1,
+      "tel": "   *104*65*1473005#  ",
+      "qty_net": "เน็ตไม่จำกัด ",
+      "speed_net": " 256 Kbps ไม่ลดสปีด",
+      "free_call": "โทรฟรี ในเครือข่าย ไม่จำกัดครั้ง ครั้งละไม่เกิน 60 นาที",
+      "free_wifi": "",
+      "regis_area":""
+      
+    },
+    {
+      "name": "dtac",
+      "price": 24 ,
+      "day":1,
+      "tel": "*104*66*1473005# ",
+      "qty_net": "เน็ตไม่จำกัด ",
+      "speed_net": " 512 Kbps ไม่ลดสปีด",
+      "free_call": "โทรฟรี ในเครือข่าย ไม่จำกัดครั้ง ครั้งละไม่เกิน 60 นาที",
+      "free_wifi": "",
+      "regis_area":""
+      
+    },
+    {
+      "name": "dtac",
+      "price": 29 ,
+      "day":1,
+      "tel": "*104*67*1473005#",
+      "qty_net": "เน็ตไม่จำกัด ",
+      "speed_net": " 1 Mbps ไม่ลดสปีด",
+      "free_call": "โทรฟรี ในเครือข่าย ไม่จำกัดครั้ง ครั้งละไม่เกิน 60 นาที",
+      "free_wifi": "",
+      "regis_area":""
+      
+    },
+    {
+      "name": "dtac",
+      "price": 89 ,
+      "day":7,
+      "tel": "*104*348*1473005#",
+      "qty_net": "เน็ตไม่จำกัด ",
+      "speed_net": " 512 Kbpsไม่ลดสปีด",
+      "free_call": "",
+      "free_wifi": "",
+      "regis_area":""
+      
+    },
+    {
+      "name": "dtac",
+      "price": 110 ,
+      "day": 7,
+      "tel": "*104*348*1473005#",
+      "qty_net": "เน็ตไม่จำกัด ",
+      "speed_net": " 1 Mbps ไม่ลดสปีด",
+      "free_call": "",
+      "free_wifi": "",
+      "regis_area":""
+      
+    },
+    {
+      "name": "dtac",
+      "price": 210 ,
+      "day": 7,
+      "tel": " *104*388*1473005#",
+      "qty_net": "เน็ตไม่จำกัด ",
+      "speed_net": " 4 Mbps ไม่ลดสปีด",
+      "free_call": "",
+      "free_wifi": "",
+      "regis_area":""
+      
+    },
+    {
+      "name": "dtac",
+      "price": 330 ,
+      "day": 7,
+      "tel": "*104*398*1473005#",
+      "qty_net": "เน็ตไม่จำกัด ",
+      "speed_net": " 10 Mbps ไม่ลดสปีด",
+      "free_call": "",
+      "free_wifi": "",
+      "regis_area":""
+      
+    },
+    {
+      "name": "dtac",
+      "price": 69 ,
+      "day":7,
+      "tel": "*104*75*1473005# ",
+      "qty_net": "เน็ตไม่จำกัด ",
+      "speed_net": " 256 Kbps ไม่ลดสปีด",
+      "free_call": "โทรฟรี ในเครือข่าย ไม่จำกัดครั้ง ครั้งละไม่เกิน 60 นาที",
+      "free_wifi": "",
+      "regis_area":""
+      
+    },
+    {
+      "name": "dtac",
+      "price": 100 ,
+      "day": 7,
+      "tel": "*104*75*1473005# ",
+      "qty_net": "เน็ตไม่จำกัด ",
+      "speed_net": " 512 Kbps ไม่ลดสปีด",
+      "free_call": "โทรฟรี ในเครือข่าย ไม่จำกัดครั้ง ครั้งละไม่เกิน 60 นาที",
+      "free_wifi": "",
+      "regis_area":""
+      
+    },
+    {
+      "name": "dtac",
+      "price": 129 ,
+      "day": 7,
+      "tel": "*104*77*1473005#",
+      "qty_net": "เน็ตไม่จำกัด ",
+      "speed_net": " 1 Mbps ไม่ลดสปีด",
+      "free_call": "โทรฟรี ในเครือข่าย ไม่จำกัดครั้ง ครั้งละไม่เกิน 60 นาที",
+      "free_wifi": "",
+      "regis_area":""
+      
+    },
+    {
+      "name": "dtac",
+      "price": 229 ,
+      "day": 7,
+      "tel": " *104*78*1473005#",
+      "qty_net": "เน็ตไม่จำกัด ",
+      "speed_net": " 4 Mbps ไม่ลดสปีด",
+      "free_call": "โทรฟรี ในเครือข่าย ไม่จำกัดครั้ง ครั้งละไม่เกิน 60 นาที",
+      "free_wifi": "",
+      "regis_area":""
+      
+    },
+    {
+      "name": "dtac",
+      "price": 300 ,
+      "day": 7,
+      "tel": " *104*78*1473005#",
+      "qty_net": "เน็ตไม่จำกัด ",
+      "speed_net": " 10 Mbps ไม่ลดสปีด",
+      "free_call": "โทรฟรี ในเครือข่าย ไม่จำกัดครั้ง ครั้งละไม่เกิน 60 นาที",
+      "free_wifi": "",
+      "regis_area":""
+      
+    },
+    {
+      "name": "dtac",
+      "price": 330 ,
+      "day": 30,
+      "tel": " *104*379*1473005#",
+      "qty_net": "เน็ตไม่จำกัด ",
+      "speed_net": " 1 Mbps ไม่ลดสปีด",
+      "free_call": "",
+      "free_wifi": "",
+      "regis_area":""
+      
+    },
+    {
+      "name": "dtac",
+      "price":650 ,
+      "day": 30,
+      "tel": " *104*389*1473005#",
+      "qty_net": "เน็ตไม่จำกัด ",
+      "speed_net": " 4 Mbps ไม่ลดสปีด",
+      "free_call": "",
+      "free_wifi": "",
+      "regis_area":""
+      
+    },
+    {
+      "name": "dtac",
+      "price": 1110 ,
+      "day": "0",
+      "tel": " *104*597*1473005#",
+      "qty_net": "เน็ตไม่จำกัด ",
+      "speed_net": " 4 Mbps ไม่ลดสปีด",
+      "free_call": "",
+      "free_wifi": "",
+      "regis_area":""
+      
+    },
+    {
+      "name": "dtac",
+      "price": 249 ,
+      "day": 30,
+      "tel": " *104*95*1473005#",
+      "qty_net": "เน็ตไม่จำกัด ",
+      "speed_net": " 256 Kbps ไม่ลดสปีด",
+      "free_call": "โทรฟรี ในเครือข่าย ไม่จำกัดครั้ง ครั้งละไม่เกิน 60 นาที",
+      "free_wifi": "",
+      "regis_area":""
+      
+    },
+    {
+      "name": "dtac",
+      "price": 369 ,
+      "day": 30,
+      "tel": " *104*96*1473005#",
+      "qty_net": "เน็ตไม่จำกัด ",
+      "speed_net": " 512 Kbps ไม่ลดสปีด",
+      "free_call": "โทรฟรี ในเครือข่าย ไม่จำกัดครั้ง ครั้งละไม่เกิน 60 นาที",
+      "free_wifi": "",
+      "regis_area":""
+      
+    },
+    {
+      "name": "dtac",
+      "price": 500 ,
+      "day": 30,
+      "tel": "  *104*97*1473005#",
+      "qty_net": "เน็ตไม่จำกัด ",
+      "speed_net": " 1 Mbps ไม่ลดสปีด",
+      "free_call": "โทรฟรี ในเครือข่าย ไม่จำกัดครั้ง ครั้งละไม่เกิน 60 นาที",
+      "free_wifi": "",
+      "regis_area":""
+      
+    },
+    {
+      "name": "dtac",
+      "price": 650 ,
+      "day": 30,
+      "tel": "  *104*98*1473005# ",
+      "qty_net": "เน็ตไม่จำกัด ",
+      "speed_net": " 4 Mbps ไม่ลดสปีด",
+      "free_call": "โทรฟรี ในเครือข่าย ไม่จำกัดครั้ง ครั้งละไม่เกิน 60 นาที",
+      "free_wifi": "",
+      "regis_area":""
+      
+    },
+    {
+      "name": "dtac",
+      "price":800 ,
+      "day": 90,
+      "tel": "  *104*591*1473005#",
+      "qty_net": "เน็ตไม่จำกัด ",
+      "speed_net": " 1 Mbps ไม่ลดสปีด",
+      "free_call": "",
+      "free_wifi": "",
+      "regis_area":""
+      
+    },
+    {
+      "name": "dtac",
+      "price": 1285,
+      "day": 90,
+      "tel": " *104*594*1473005#",
+      "qty_net": "เน็ตไม่จำกัด ",
+      "speed_net": " 4 Mbps ไม่ลดสปีด",
+      "free_call": "",
+      "free_wifi": "",
+      "regis_area":""
+      
+    },
+    {
+      "name": "dtac",
+      "price": 1925 ,
+      "day": 90,
+      "tel": " *104*598*1473005# ",
+      "qty_net": "เน็ตไม่จำกัด ",
+      "speed_net": " 10 Mbps ไม่ลดสปีด",
+      "free_call": "",
+      "free_wifi": "",
+      "regis_area":""
+      
     }
   ]
 }

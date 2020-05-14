@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorPrimary">#FF35405E</color>
+    <color name="colorPrimaryDark">#131722</color>
+    <color name="colorAccent">#6C540B</color>
 
-    <color name="colorTel">#C7C7C7</color>
-    <color name="colorHead">#000000</color>
+    <color name="colorTrueHead">#D50000</color>
+    <color name="colorTrueBody">#FBE6E6</color>
+    <color name="colorTrueIcon">#F7CCCC</color>
+
+    <color name="colorAisHead">#689F38</color>
+    <color name="colorAisBody">#F0F6EB</color>
+    <color name="colorAisIcon">#E1ECD7</color>
+
+    <color name="colorDtacHead">#2196F3</color>
+    <color name="colorDtacBody">#E9F5FE</color>
+    <color name="colorDtacIcon">#D3EAFD</color>
 </resources>

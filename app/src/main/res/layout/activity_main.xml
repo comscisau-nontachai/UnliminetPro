@@ -9,6 +9,7 @@
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabs_main"
         app:tabMode="fixed"
+        app:tabTextAppearance="@dimen/txtSize15"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 

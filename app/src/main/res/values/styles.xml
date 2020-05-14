@@ -6,11 +6,13 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="fontFamily">@font/nithan</item>
+        <item name="android:textSize">20sp</item>
     </style>
 
     <style name="TextViewTitle">
         <item name="android:textSize">20sp</item>
-        <item name="android:textColor">@color/colorHead</item>
+        <item name="android:textColor">@color/colorPrimary</item>
     </style>
 
 </resources>
