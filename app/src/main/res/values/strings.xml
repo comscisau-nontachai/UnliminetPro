@@ -1,8 +1,10 @@
 <resources>
     <string name="app_name">โปรเน็ตเสริม</string>
 
-    <string name="str_true">โปรเน็ตเสริมทรู</string>
-    <string name="str_ais">โปรเน็ตเสริมเอไอเอส</string>
-    <string name="str_dtac">โปรเน็ตเสริมดีแทค</string>
+    <string name="txt_true">โปรเน็ตเสริมทรู</string>
+    <string name="txt_ais">โปรเน็ตเสริมเอไอเอส</string>
+    <string name="txt_dtac">โปรเน็ตเสริมดีแทค</string>
     <string name="version_app_menu">เวอร์ชัน 1.0.0</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

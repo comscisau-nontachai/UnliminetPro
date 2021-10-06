@@ -4,6 +4,8 @@
     <color name="colorPrimaryDark">#131722</color>
     <color name="colorAccent">#6C540B</color>
 
+    <color name="white">#ffffff</color>
+
     <color name="colorTrueHead">#D50000</color>
     <color name="colorTrueBody">#FBE6E6</color>
     <color name="colorTrueIcon">#F7CCCC</color>

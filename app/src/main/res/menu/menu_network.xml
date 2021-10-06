@@ -4,5 +4,5 @@
     <item
         android:id="@+id/menu_version_app"
         android:title="@string/version_app_menu"
-        app:showAsAction="collapseActionView"></item>
+        app:showAsAction="collapseActionView" />
 </menu>

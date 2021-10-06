@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_true"
+        android:icon="@drawable/ic_true"
+        android:title="@string/txt_true"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_ais"
+        android:icon="@drawable/ic_ais"
+        android:title="@string/txt_ais"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_dtac"
+        android:icon="@drawable/ic_dtac"
+        android:title="@string/txt_dtac"
+        app:showAsAction="ifRoom" />
+
+</menu>

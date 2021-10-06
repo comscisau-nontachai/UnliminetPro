@@ -1,5 +1,6 @@
 package com.becomedev.unliminetpro.ui.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,14 +9,18 @@ import androidx.recyclerview.widget.RecyclerView
 import com.becomedev.unliminetpro.R
 import com.becomedev.unliminetpro.extension.to2Point
 import com.becomedev.unliminetpro.extension.toNumericFormat
-import com.becomedev.unliminetpro.model.NetworkData
-import com.becomedev.unliminetpro.presenter.NetworkContract
+import com.becomedev.unliminetpro.model.NetworkPromotionModel
 import kotlinx.android.synthetic.main.item_row_network.view.*
-import java.text.NumberFormat
 
 
-class NetworkAdapter(private val items: ArrayList<NetworkData.SubNetworkData>,private val recyclerItemClickListener: NetworkContract.ItemClick) :
-    RecyclerView.Adapter<NetworkAdapter.ViewHolder>() {
+class PromotionAdapter : RecyclerView.Adapter<PromotionAdapter.ViewHolder>() {
+
+    var items = mutableListOf<NetworkPromotionModel>()
+    set(value) {
+        field = value
+        notifyDataSetChanged()
+    }
+    private var callback : ((NetworkPromotionModel) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
@@ -34,26 +39,27 @@ class NetworkAdapter(private val items: ArrayList<NetworkData.SubNetworkData>,pr
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(network: NetworkData.SubNetworkData) {
+        @SuppressLint("SetTextI18n")
+        fun bind(network: NetworkPromotionModel) {
 
             itemView.apply {
 
                 //show package extension
-                network.free_call.let {
-                    if(!it.isNullOrEmpty()){
+                network.freeCall.let {
+                    if(it.isNotEmpty()){
                         layout_free_call.apply {
                             visibility = View.VISIBLE
-                            txt_tell_free.text = network.free_call
+                            txt_tell_free.text = network.freeCall
                         }
                     }else{
                         layout_free_call.visibility = View.GONE
                     }
                 }
-                network.free_wifi.let {
-                    if(!it.isNullOrEmpty()) {
+                network.freeWifi.let {
+                    if(it.isNotEmpty()) {
                         layout_free_wifi.apply {
                             visibility = View.VISIBLE
-                            txt_free_wifi.text = network.free_wifi
+                            txt_free_wifi.text = network.freeWifi
                         }
                     }else{
                         layout_free_wifi.visibility = View.GONE
@@ -91,14 +97,19 @@ class NetworkAdapter(private val items: ArrayList<NetworkData.SubNetworkData>,pr
                 }
 
                 txt_price.text = "${network.price.toNumericFormat()} บาท /  ${network.day} วัน"
-                txt_net.text = "${network.qty_net} ความเร็ว ${network.speed_net}"
+                txt_net.text = "${network.qtyNet} ความเร็ว ${network.speedNet}"
                 txt_total.text = "ราคารวมภาษี ${ ((network.price*7f/100f)+network.price).to2Point() } บาท"
                 txt_tel.text = network.tel
 
                 btn_apply.setOnClickListener {
-                    recyclerItemClickListener.onItemClick(network.tel)
+                    //recyclerItemClickListener.onItemClick(network.tel)
+                    callback?.invoke(network)
                 }
             }
         }
+    }
+
+    fun setOnItemClick(cb : ((NetworkPromotionModel) -> Unit)?){
+        this.callback = cb
     }
 }
