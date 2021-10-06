@@ -1,11 +1,6 @@
 package com.becomedev.unliminetpro.ui.main.fragment
 
-import android.Manifest
-import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
-import android.util.Log
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.becomedev.unliminetpro.R
 import com.becomedev.unliminetpro.data.base.BaseFragment
@@ -13,17 +8,10 @@ import com.becomedev.unliminetpro.data.constant.ApplicationConstantKey
 import com.becomedev.unliminetpro.data.enum.PromotionNetworkEnum
 import com.becomedev.unliminetpro.databinding.FragmentPromotionBinding
 import com.becomedev.unliminetpro.extension.callPhone
-import com.becomedev.unliminetpro.extension.getEnumExtra
 import com.becomedev.unliminetpro.model.NetworkPromotionModel
 import com.becomedev.unliminetpro.model.PromotionModel
-import com.becomedev.unliminetpro.ui.adapter.PromotionAdapter
+import com.becomedev.unliminetpro.ui.main.PromotionAdapter
 import com.google.gson.Gson
-import com.karumi.dexter.Dexter
-import com.karumi.dexter.PermissionToken
-import com.karumi.dexter.listener.PermissionDeniedResponse
-import com.karumi.dexter.listener.PermissionGrantedResponse
-import com.karumi.dexter.listener.PermissionRequest
-import com.karumi.dexter.listener.single.PermissionListener
 
 class PromotionFragment : BaseFragment<FragmentPromotionBinding>() {
 

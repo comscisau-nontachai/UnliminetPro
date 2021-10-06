@@ -10,6 +10,10 @@
 
     </style>
 
+    <style name="SplashScreen" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/slash_screen</item>
+    </style>
+
     <style name="TextViewTitle">
         <item name="android:textSize">20sp</item>
         <item name="android:textColor">@color/colorPrimary</item>

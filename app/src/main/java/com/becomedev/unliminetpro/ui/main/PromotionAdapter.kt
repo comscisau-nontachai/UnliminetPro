@@ -1,4 +1,4 @@
-package com.becomedev.unliminetpro.ui.adapter
+package com.becomedev.unliminetpro.ui.main
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
