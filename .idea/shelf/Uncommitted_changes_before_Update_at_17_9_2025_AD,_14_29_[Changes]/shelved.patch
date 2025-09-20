@@ -1,0 +1,289 @@
+Index: app/build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>apply plugin: 'com.android.application'\napply plugin: 'kotlin-android'\napply plugin: 'kotlin-android-extensions'\napply plugin: 'kotlin-kapt'\napply plugin: 'com.google.firebase.crashlytics'\n\nandroid {\n    compileSdkVersion 30\n    buildToolsVersion \"29.0.3\"\n    defaultConfig {\n        applicationId \"com.becomedev.unliminetpro\"\n        minSdkVersion 19\n        targetSdkVersion 30\n        versionCode 2\n        versionName \"1.1.0\"\n        testInstrumentationRunner \"androidx.test.runner.AndroidJUnitRunner\"\n        multiDexEnabled true\n    }\n    buildTypes {\n        release {\n            minifyEnabled false\n            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'\n        }\n    }\n\n    buildFeatures{\n        dataBinding true\n    }\n}\n\ndependencies {\n    def room_version = \"2.2.4\"\n    implementation fileTree(dir: 'libs', include: ['*.jar'])\n    implementation \"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version\"\n    implementation 'androidx.appcompat:appcompat:1.1.0'\n    implementation 'androidx.core:core-ktx:1.2.0'\n    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'\n    implementation 'androidx.legacy:legacy-support-v4:1.0.0'\n    testImplementation 'junit:junit:4.12'\n    androidTestImplementation 'androidx.test:runner:1.1.1'\n    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'\n\n    implementation 'com.google.android.material:material:1.1.0'\n    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.4'\n    implementation \"androidx.room:room-runtime:$room_version\"\n    kapt \"androidx.room:room-compiler:$room_version\"\n    // For Kotlin use kapt instead of annotationProcessor\n\n    implementation 'com.facebook.stetho:stetho:1.5.1'\n    implementation 'com.google.code.gson:gson:2.8.5'\n    implementation 'com.karumi:dexter:6.1.2'\n\n    //add new\n// Navigator\n    implementation \"androidx.navigation:navigation-fragment-ktx:$nav_version\"\n    implementation \"androidx.navigation:navigation-ui-ktx:$nav_version\"\n\n    // Firebase\n    implementation 'com.google.firebase:firebase-core:17.4.3'\n    implementation 'com.google.firebase:firebase-messaging:20.2.1'\n    implementation 'com.google.firebase:firebase-analytics-ktx:17.4.3'\n    implementation 'com.google.firebase:firebase-crashlytics:17.1.0'\n\n    // Retrofit\n    implementation \"com.squareup.retrofit2:retrofit:$retrofit_version\"\n    implementation \"com.squareup.retrofit2:converter-gson:$retrofit_version\"\n    implementation 'com.squareup.okhttp3:logging-interceptor:4.2.1'\n    implementation \"com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2\"\n\n    // Glide\n    implementation \"com.github.bumptech.glide:glide:$glide_version\"\n    kapt \"com.github.bumptech.glide:compiler:$glide_version\"\n\n    // Timber\n    implementation 'com.jakewharton.timber:timber:4.7.1'\n\n    // KPermission\n    implementation 'com.github.fondesa:kpermissions:3.1.0'\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build.gradle b/app/build.gradle
+--- a/app/build.gradle	(revision 453cce862674853719b1c6e6872b79ab049b80ad)
++++ b/app/build.gradle	(date 1758093817872)
+@@ -1,16 +1,16 @@
+ apply plugin: 'com.android.application'
+ apply plugin: 'kotlin-android'
+-apply plugin: 'kotlin-android-extensions'
+ apply plugin: 'kotlin-kapt'
+ apply plugin: 'com.google.firebase.crashlytics'
+ 
+ android {
+-    compileSdkVersion 30
+-    buildToolsVersion "29.0.3"
++    namespace 'com.becomedev.unliminetpro' //com.startwithn.unliminetpro
++    compileSdk 35
++    buildToolsVersion "35.0.1"
+     defaultConfig {
+         applicationId "com.becomedev.unliminetpro"
+-        minSdkVersion 19
+-        targetSdkVersion 30
++        minSdkVersion 27
++        targetSdkVersion 35
+         versionCode 2
+         versionName "1.1.0"
+         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+@@ -26,6 +26,14 @@
+     buildFeatures{
+         dataBinding true
+     }
++
++    compileOptions {
++        sourceCompatibility JavaVersion.VERSION_1_8 // or VERSION_17
++        targetCompatibility JavaVersion.VERSION_1_8 // or VERSION_17
++    }
++    kotlinOptions {
++        jvmTarget = "1.8" // or "17"
++    }
+ }
+ 
+ dependencies {
+Index: app/src/main/java/com/becomedev/unliminetpro/ui/main/PromotionAdapter.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.becomedev.unliminetpro.ui.main\n\nimport android.annotation.SuppressLint\nimport android.view.LayoutInflater\nimport android.view.View\nimport android.view.ViewGroup\nimport androidx.core.content.ContextCompat\nimport androidx.recyclerview.widget.RecyclerView\nimport com.becomedev.unliminetpro.R\nimport com.becomedev.unliminetpro.extension.to2Point\nimport com.becomedev.unliminetpro.extension.toNumericFormat\nimport com.becomedev.unliminetpro.model.NetworkPromotionModel\nimport kotlinx.android.synthetic.main.item_row_network.view.*\n\n\nclass PromotionAdapter : RecyclerView.Adapter<PromotionAdapter.ViewHolder>() {\n\n    var items = mutableListOf<NetworkPromotionModel>()\n    set(value) {\n        field = value\n        notifyDataSetChanged()\n    }\n    private var callback : ((NetworkPromotionModel) -> Unit)? = null\n\n    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {\n        return ViewHolder(\n            LayoutInflater.from(parent.context).inflate(\n                R.layout.item_row_network,\n                parent,\n                false\n            )\n        )\n    }\n\n    override fun getItemCount(): Int = items.size\n\n    override fun onBindViewHolder(holder: ViewHolder, position: Int) {\n        holder.bind(items[position])\n    }\n\n    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {\n        @SuppressLint(\"SetTextI18n\")\n        fun bind(network: NetworkPromotionModel) {\n\n            itemView.apply {\n\n                //show package extension\n                network.freeCall.let {\n                    if(it.isNotEmpty()){\n                        layout_free_call.apply {\n                            visibility = View.VISIBLE\n                            txt_tell_free.text = network.freeCall\n                        }\n                    }else{\n                        layout_free_call.visibility = View.GONE\n                    }\n                }\n                network.freeWifi.let {\n                    if(it.isNotEmpty()) {\n                        layout_free_wifi.apply {\n                            visibility = View.VISIBLE\n                            txt_free_wifi.text = network.freeWifi\n                        }\n                    }else{\n                        layout_free_wifi.visibility = View.GONE\n                    }\n                }\n\n                //set bg color\n                when(network.name){\n                    \"true\" -> {\n                        cardview_layout.setCardBackgroundColor(ContextCompat.getColor(context,R.color.colorTrueHead))\n                        layout_icon.setBackgroundColor(ContextCompat.getColor(context,R.color.colorTrueIcon))\n                        layout_icon2.setBackgroundColor(ContextCompat.getColor(context,R.color.colorTrueIcon))\n                        layout_icon3.setBackgroundColor(ContextCompat.getColor(context,R.color.colorTrueIcon))\n                        layout_icon4.setBackgroundColor(ContextCompat.getColor(context,R.color.colorTrueIcon))\n                        linearLayout2.setBackgroundColor(ContextCompat.getColor(context,R.color.colorTrueBody))\n\n\n                    }\n                    \"ais\" -> {\n                        cardview_layout.setCardBackgroundColor(ContextCompat.getColor(context,R.color.colorAisHead))\n                        layout_icon.setBackgroundColor(ContextCompat.getColor(context,R.color.colorAisIcon))\n                        layout_icon2.setBackgroundColor(ContextCompat.getColor(context,R.color.colorAisIcon))\n                        layout_icon3.setBackgroundColor(ContextCompat.getColor(context,R.color.colorAisIcon))\n                        layout_icon4.setBackgroundColor(ContextCompat.getColor(context,R.color.colorAisIcon))\n                        linearLayout2.setBackgroundColor(ContextCompat.getColor(context,R.color.colorAisBody))\n                    }\n                   else -> {\n                       cardview_layout.setCardBackgroundColor(ContextCompat.getColor(context,R.color.colorDtacHead))\n                       layout_icon.setBackgroundColor(ContextCompat.getColor(context,R.color.colorDtacIcon))\n                       layout_icon2.setBackgroundColor(ContextCompat.getColor(context,R.color.colorDtacIcon))\n                       layout_icon3.setBackgroundColor(ContextCompat.getColor(context,R.color.colorDtacIcon))\n                       layout_icon4.setBackgroundColor(ContextCompat.getColor(context,R.color.colorDtacIcon))\n                       linearLayout2.setBackgroundColor(ContextCompat.getColor(context,R.color.colorDtacBody))\n                   }\n                }\n\n                txt_price.text = \"${network.price.toNumericFormat()} บาท /  ${network.day} วัน\"\n                txt_net.text = \"${network.qtyNet} ความเร็ว ${network.speedNet}\"\n                txt_total.text = \"ราคารวมภาษี ${ ((network.price*7f/100f)+network.price).to2Point() } บาท\"\n                txt_tel.text = network.tel\n\n                btn_apply.setOnClickListener {\n                    //recyclerItemClickListener.onItemClick(network.tel)\n                    callback?.invoke(network)\n                }\n            }\n        }\n    }\n\n    fun setOnItemClick(cb : ((NetworkPromotionModel) -> Unit)?){\n        this.callback = cb\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/becomedev/unliminetpro/ui/main/PromotionAdapter.kt b/app/src/main/java/com/becomedev/unliminetpro/ui/main/PromotionAdapter.kt
+--- a/app/src/main/java/com/becomedev/unliminetpro/ui/main/PromotionAdapter.kt	(revision 453cce862674853719b1c6e6872b79ab049b80ad)
++++ b/app/src/main/java/com/becomedev/unliminetpro/ui/main/PromotionAdapter.kt	(date 1758093971789)
+@@ -10,7 +10,6 @@
+ import com.becomedev.unliminetpro.extension.to2Point
+ import com.becomedev.unliminetpro.extension.toNumericFormat
+ import com.becomedev.unliminetpro.model.NetworkPromotionModel
+-import kotlinx.android.synthetic.main.item_row_network.view.*
+ 
+ 
+ class PromotionAdapter : RecyclerView.Adapter<PromotionAdapter.ViewHolder>() {
+Index: build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>// Top-level build file where you can add configuration options common to all sub-projects/modules.\n\nbuildscript {\n    ext {\n        kotlin_version = '1.5.20'\n        koin_version = '2.1.4'\n        multidex_version = '2.0.1'\n        retrofit_version = '2.7.0'\n        glide_version = '4.11.0'\n        viewmodel_version = '2.2.0'\n        nav_version = '2.3.0-alpha04'\n    }\n\n    repositories {\n        google()\n        mavenCentral()\n    }\n    dependencies {\n        classpath \"com.android.tools.build:gradle:4.2.1\"\n        classpath \"org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.31\"\n        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.2.0'\n\n    }\n}\n\nallprojects {\n    repositories {\n        google()\n        mavenCentral()\n    }\n}\n\ntask clean(type: Delete) {\n    delete rootProject.buildDir\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/build.gradle b/build.gradle
+--- a/build.gradle	(revision 453cce862674853719b1c6e6872b79ab049b80ad)
++++ b/build.gradle	(date 1758089850380)
+@@ -1,14 +1,14 @@
+ // Top-level build file where you can add configuration options common to all sub-projects/modules.
+-
+ buildscript {
+     ext {
+-        kotlin_version = '1.5.20'
++        kotlin_version = '1.9.25'
+         koin_version = '2.1.4'
+         multidex_version = '2.0.1'
+         retrofit_version = '2.7.0'
+         glide_version = '4.11.0'
+         viewmodel_version = '2.2.0'
+         nav_version = '2.3.0-alpha04'
++        agp_version = '8.7.0'
+     }
+ 
+     repositories {
+@@ -16,8 +16,8 @@
+         mavenCentral()
+     }
+     dependencies {
+-        classpath "com.android.tools.build:gradle:4.2.1"
+-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.31"
++        classpath "com.android.tools.build:gradle:$agp_version"
++        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.25"
+         classpath 'com.google.firebase:firebase-crashlytics-gradle:2.2.0'
+ 
+     }
+Index: app/src/main/java/com/becomedev/unliminetpro/ui/main/MainActivity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.becomedev.unliminetpro.ui.main\n\nimport android.os.Bundle\nimport android.view.Menu\nimport androidx.appcompat.app.AlertDialog\nimport androidx.navigation.NavController\nimport androidx.navigation.Navigation\nimport androidx.navigation.ui.NavigationUI\nimport com.becomedev.unliminetpro.BuildConfig\nimport com.becomedev.unliminetpro.R\nimport com.becomedev.unliminetpro.data.base.BaseActivity\nimport com.becomedev.unliminetpro.data.constant.ApplicationConstantKey\nimport com.becomedev.unliminetpro.data.enum.PromotionNetworkEnum\nimport com.becomedev.unliminetpro.databinding.ActivityMainBinding\nimport com.google.android.material.dialog.MaterialAlertDialogBuilder\n\nclass MainActivity : BaseActivity<ActivityMainBinding>(){\n    override fun getLayoutId(): Int = R.layout.activity_main\n\n    override fun setUp() {\n        super.setUp()\n\n        initView()\n    }\n\n    private fun initView() {\n\n        val navController: NavController = Navigation.findNavController(this, R.id.fragment)\n        NavigationUI.setupWithNavController(binding.bnvMain, navController)\n\n        val bundle = Bundle()\n        bundle.putSerializable(ApplicationConstantKey.KEY_PROMOTION_TYPE,PromotionNetworkEnum.TRUE)\n        navController.navigate(R.id.action_true,bundle)\n\n        binding.bnvMain.itemIconTintList = null\n        binding.bnvMain.setOnNavigationItemSelectedListener { item ->\n            when(item.itemId){\n                R.id.action_true ->{\n                    bundle.putSerializable(ApplicationConstantKey.KEY_PROMOTION_TYPE,PromotionNetworkEnum.TRUE)\n                    navController.navigate(R.id.action_true,bundle)\n                    return@setOnNavigationItemSelectedListener true\n                }\n                R.id.action_ais ->{\n                    bundle.putSerializable(ApplicationConstantKey.KEY_PROMOTION_TYPE,PromotionNetworkEnum.AIS)\n                    navController.navigate(R.id.action_ais,bundle)\n                    return@setOnNavigationItemSelectedListener true\n                }\n                R.id.action_dtac ->{\n                    bundle.putSerializable(ApplicationConstantKey.KEY_PROMOTION_TYPE,PromotionNetworkEnum.DTAC)\n                    navController.navigate(R.id.action_dtac,bundle)\n                    return@setOnNavigationItemSelectedListener true\n                }\n            }\n            false\n\n        }\n    }\n\n    override fun onCreateOptionsMenu(menu: Menu?): Boolean {\n        menuInflater.inflate(R.menu.menu_network,menu)\n        menu?.getItem(0)?.title = \"เวอร์ชั่น ${BuildConfig.VERSION_NAME}\"\n        return true\n    }\n\n    override fun onBackPressed() {\n        MaterialAlertDialogBuilder(this).apply {\n            setTitle(\"ออกจากแอป ${applicationInfo.loadLabel(packageManager)}\")\n            setMessage(\"คุณต้องการออกจากแอป?\")\n            setPositiveButton(\"ออก\"){ dialog,_ ->\n                finishAffinity()\n            }\n            setNegativeButton(\"ไม่\"){ dialog , _ ->\n                dialog.dismiss()\n            }\n        }.show()\n    }\n\n}\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/becomedev/unliminetpro/ui/main/MainActivity.kt b/app/src/main/java/com/becomedev/unliminetpro/ui/main/MainActivity.kt
+--- a/app/src/main/java/com/becomedev/unliminetpro/ui/main/MainActivity.kt	(revision 453cce862674853719b1c6e6872b79ab049b80ad)
++++ b/app/src/main/java/com/becomedev/unliminetpro/ui/main/MainActivity.kt	(date 1758094048935)
+@@ -6,7 +6,6 @@
+ import androidx.navigation.NavController
+ import androidx.navigation.Navigation
+ import androidx.navigation.ui.NavigationUI
+-import com.becomedev.unliminetpro.BuildConfig
+ import com.becomedev.unliminetpro.R
+ import com.becomedev.unliminetpro.data.base.BaseActivity
+ import com.becomedev.unliminetpro.data.constant.ApplicationConstantKey
+@@ -58,7 +57,7 @@
+ 
+     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+         menuInflater.inflate(R.menu.menu_network,menu)
+-        menu?.getItem(0)?.title = "เวอร์ชั่น ${BuildConfig.VERSION_NAME}"
++        //menu?.getItem(0)?.title = "เวอร์ชั่น ${BuildConfig.VERSION_NAME}"
+         return true
+     }
+ 
+Index: .idea/studiobot.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/studiobot.xml b/.idea/studiobot.xml
+new file mode 100644
+--- /dev/null	(date 1758089051511)
++++ b/.idea/studiobot.xml	(date 1758089051511)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="StudioBotProjectSettings">
++    <option name="shareContext" value="OptedOut" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/AndroidProjectSystem.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/AndroidProjectSystem.xml b/.idea/AndroidProjectSystem.xml
+new file mode 100644
+--- /dev/null	(date 1758079415055)
++++ b/.idea/AndroidProjectSystem.xml	(date 1758079415055)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="AndroidProjectSystem">
++    <option name="providerId" value="com.android.tools.idea.GradleProjectSystem" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/runConfigurations.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"RunConfigurationProducerService\">\n    <option name=\"ignoredProducers\">\n      <set>\n        <option value=\"org.jetbrains.plugins.gradle.execution.test.runner.AllInPackageGradleConfigurationProducer\" />\n        <option value=\"org.jetbrains.plugins.gradle.execution.test.runner.TestClassGradleConfigurationProducer\" />\n        <option value=\"org.jetbrains.plugins.gradle.execution.test.runner.TestMethodGradleConfigurationProducer\" />\n      </set>\n    </option>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/runConfigurations.xml b/.idea/runConfigurations.xml
+--- a/.idea/runConfigurations.xml	(revision 453cce862674853719b1c6e6872b79ab049b80ad)
++++ b/.idea/runConfigurations.xml	(date 1758079415057)
+@@ -3,6 +3,14 @@
+   <component name="RunConfigurationProducerService">
+     <option name="ignoredProducers">
+       <set>
++        <option value="com.intellij.execution.junit.AbstractAllInDirectoryConfigurationProducer" />
++        <option value="com.intellij.execution.junit.AllInPackageConfigurationProducer" />
++        <option value="com.intellij.execution.junit.PatternConfigurationProducer" />
++        <option value="com.intellij.execution.junit.TestInClassConfigurationProducer" />
++        <option value="com.intellij.execution.junit.UniqueIdConfigurationProducer" />
++        <option value="com.intellij.execution.junit.testDiscovery.JUnitTestDiscoveryConfigurationProducer" />
++        <option value="org.jetbrains.kotlin.idea.junit.KotlinJUnitRunConfigurationProducer" />
++        <option value="org.jetbrains.kotlin.idea.junit.KotlinPatternConfigurationProducer" />
+         <option value="org.jetbrains.plugins.gradle.execution.test.runner.AllInPackageGradleConfigurationProducer" />
+         <option value="org.jetbrains.plugins.gradle.execution.test.runner.TestClassGradleConfigurationProducer" />
+         <option value="org.jetbrains.plugins.gradle.execution.test.runner.TestMethodGradleConfigurationProducer" />
+Index: .idea/migrations.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/migrations.xml b/.idea/migrations.xml
+new file mode 100644
+--- /dev/null	(date 1758091725517)
++++ b/.idea/migrations.xml	(date 1758091725517)
+@@ -0,0 +1,10 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectMigrations">
++    <option name="MigrateToGradleLocalJavaHome">
++      <set>
++        <option value="$PROJECT_DIR$" />
++      </set>
++    </option>
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/deploymentTargetSelector.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/deploymentTargetSelector.xml b/.idea/deploymentTargetSelector.xml
+new file mode 100644
+--- /dev/null	(date 1758091725517)
++++ b/.idea/deploymentTargetSelector.xml	(date 1758091725517)
+@@ -0,0 +1,10 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="deploymentTargetSelector">
++    <selectionStates>
++      <SelectionState runConfigName="app">
++        <option name="selectionMode" value="DROPDOWN" />
++      </SelectionState>
++    </selectionStates>
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/compiler.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"CompilerConfiguration\">\n    <bytecodeTargetLevel target=\"1.8\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/compiler.xml b/.idea/compiler.xml
+--- a/.idea/compiler.xml	(revision 453cce862674853719b1c6e6872b79ab049b80ad)
++++ b/.idea/compiler.xml	(date 1758089930305)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="CompilerConfiguration">
+-    <bytecodeTargetLevel target="1.8" />
++    <bytecodeTargetLevel target="21" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: gradle/wrapper/gradle-wrapper.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>#Wed Oct 06 13:16:08 ICT 2021\ndistributionBase=GRADLE_USER_HOME\ndistributionUrl=https\\://services.gradle.org/distributions/gradle-7.2-bin.zip\ndistributionPath=wrapper/dists\nzipStorePath=wrapper/dists\nzipStoreBase=GRADLE_USER_HOME\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/gradle/wrapper/gradle-wrapper.properties b/gradle/wrapper/gradle-wrapper.properties
+--- a/gradle/wrapper/gradle-wrapper.properties	(revision 453cce862674853719b1c6e6872b79ab049b80ad)
++++ b/gradle/wrapper/gradle-wrapper.properties	(date 1758089169811)
+@@ -1,6 +1,6 @@
+-#Wed Oct 06 13:16:08 ICT 2021
++#Wed Sep 17 13:06:09 ICT 2025
+ distributionBase=GRADLE_USER_HOME
+-distributionUrl=https\://services.gradle.org/distributions/gradle-7.2-bin.zip
+ distributionPath=wrapper/dists
+-zipStorePath=wrapper/dists
++distributionUrl=https\://services.gradle.org/distributions/gradle-8.9-bin.zip
+ zipStoreBase=GRADLE_USER_HOME
++zipStorePath=wrapper/dists
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"DesignSurface\">\n    <option name=\"filePathToZoomLevelMap\">\n      <map>\n        <entry key=\"..\\:/Android Project/Example/UnliminetPro/app/src/main/res/drawable-v24/ic_launcher_foreground.xml\" value=\"0.54375\" />\n        <entry key=\"..\\:/Android Project/Example/UnliminetPro/app/src/main/res/drawable/call.xml\" value=\"0.54375\" />\n        <entry key=\"..\\:/Android Project/Example/UnliminetPro/app/src/main/res/drawable/ic_launcher_background.xml\" value=\"0.54375\" />\n        <entry key=\"..\\:/Android Project/Example/UnliminetPro/app/src/main/res/drawable/ic_navigate_next_black_24dp.xml\" value=\"0.54375\" />\n        <entry key=\"..\\:/Android Project/Example/UnliminetPro/app/src/main/res/drawable/shape_blue.xml\" value=\"0.5492307692307692\" />\n        <entry key=\"..\\:/Android Project/Example/UnliminetPro/app/src/main/res/drawable/slash_screen.xml\" value=\"0.54375\" />\n        <entry key=\"..\\:/Android Project/Example/UnliminetPro/app/src/main/res/drawable/wifi.xml\" value=\"0.5492307692307692\" />\n        <entry key=\"..\\:/Android Project/Example/UnliminetPro/app/src/main/res/drawable/world.xml\" value=\"0.54375\" />\n        <entry key=\"..\\:/Android Project/Example/UnliminetPro/app/src/main/res/layout/activity_main.xml\" value=\"0.5157407407407407\" />\n        <entry key=\"..\\:/Android Project/Example/UnliminetPro/app/src/main/res/layout/activity_slash_screen.xml\" value=\"0.5276041666666667\" />\n        <entry key=\"..\\:/Android Project/Example/UnliminetPro/app/src/main/res/layout/fragment_ais.xml\" value=\"0.5157407407407407\" />\n        <entry key=\"..\\:/Android Project/Example/UnliminetPro/app/src/main/res/layout/fragment_dtac.xml\" value=\"0.5157407407407407\" />\n        <entry key=\"..\\:/Android Project/Example/UnliminetPro/app/src/main/res/layout/fragment_promotion.xml\" value=\"0.5157407407407407\" />\n        <entry key=\"..\\:/Android Project/Example/UnliminetPro/app/src/main/res/layout/fragment_true.xml\" value=\"0.5157407407407407\" />\n        <entry key=\"..\\:/Android Project/Example/UnliminetPro/app/src/main/res/layout/item_row_network.xml\" value=\"0.5157407407407407\" />\n        <entry key=\"..\\:/Android Project/Example/UnliminetPro/app/src/main/res/menu/menu_main.xml\" value=\"0.5157407407407407\" />\n        <entry key=\"..\\:/Android Project/Example/UnliminetPro/app/src/main/res/menu/menu_network.xml\" value=\"0.5157407407407407\" />\n        <entry key=\"..\\:/Android Project/Example/UnliminetPro/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml\" value=\"0.54375\" />\n        <entry key=\"..\\:/Android Project/Example/UnliminetPro/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml\" value=\"0.54375\" />\n      </map>\n    </option>\n  </component>\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_1_8\" default=\"true\" project-jdk-name=\"1.8\" project-jdk-type=\"JavaSDK\">\n    <output url=\"file://$PROJECT_DIR$/build/classes\" />\n  </component>\n  <component name=\"ProjectType\">\n    <option name=\"id\" value=\"Android\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 453cce862674853719b1c6e6872b79ab049b80ad)
++++ b/.idea/misc.xml	(date 1758091725513)
+@@ -26,7 +26,7 @@
+     </option>
+   </component>
+   <component name="ExternalStorageConfigurationManager" enabled="true" />
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="jbr-21" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/build/classes" />
+   </component>
+   <component name="ProjectType">
