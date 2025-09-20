@@ -52,10 +52,13 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.content.ContextCompat
 import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
+import com.becomedev.unliminetpro.BuildConfig
 import com.becomedev.unliminetpro.R
 import com.becomedev.unliminetpro.data.model.NetworkPromotionModel
 import com.becomedev.unliminetpro.data.model.PromotionModel
 import com.becomedev.unliminetpro.network.UiState
+import com.becomedev.unliminetpro.ui.AdMobBanner
 import com.becomedev.unliminetpro.ui.MainViewModel
 import com.becomedev.unliminetpro.ui.TwoButtonDialog
 import com.becomedev.unliminetpro.ui.theme.ButtonDarkBlue
@@ -81,41 +84,49 @@ fun HomeScreen(navController: NavHostController, viewModel: MainViewModel = koin
                 }
             },
         ) { innerPadding ->
-            Box(
+            Column(
                 modifier = Modifier
                     .padding(innerPadding)
                     .fillMaxSize()
-                    .background(MaterialTheme.colorScheme.background),
-                contentAlignment = Alignment.Center
             ) {
+                AdMobBanner(BuildConfig.ADMOB_APP_ID)
 
-                when (uiState) {
-                    is UiState.Loading -> {
-                        CircularProgressIndicator()
-                    }
+                // Main content
+                Box(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .background(MaterialTheme.colorScheme.background),
+                    contentAlignment = Alignment.Center
+                ) {
+                    when (uiState) {
+                        is UiState.Loading -> {
+                            CircularProgressIndicator()
+                        }
 
-                    is UiState.Error -> {
-                        Text(
-                            text = (uiState as UiState.Error).message,
-                            color = MaterialTheme.colorScheme.error,
-                            modifier = Modifier.padding(top = 8.dp)
-                        )
-                    }
+                        is UiState.Error -> {
+                            Text(
+                                text = (uiState as UiState.Error).message,
+                                color = MaterialTheme.colorScheme.error,
+                                modifier = Modifier.padding(top = 8.dp)
+                            )
+                        }
 
-                    is UiState.Success -> {
-                        val dataList = (uiState as UiState.Success<PromotionModel>).data
-                        LazyColumn {
-                            items(dataList.network) { item ->
-                                PackageCardItem(item)
-                            }
-                            item {
-                                Spacer(modifier = Modifier.height(14.dp))
+                        is UiState.Success -> {
+                            val dataList = (uiState as UiState.Success<PromotionModel>).data
+                            LazyColumn {
+                                items(dataList.network) { item ->
+                                    PackageCardItem(item)
+                                }
+                                item {
+                                    Spacer(modifier = Modifier.height(14.dp))
+                                }
                             }
                         }
                     }
-                }
 
+                }
             }
+
         }
     }
 
@@ -292,8 +303,7 @@ fun PackageDetailItem(icon: VectorPainter, title: String) {
 @Composable
 fun PreviewItem() {
     UnliminetProTheme {
-        //HomeScreen(rememberNavController())
-//        LoadingOverlay()
+        HomeScreen(rememberNavController())
 
         //ProductItemShimmer()
     }
