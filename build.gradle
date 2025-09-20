@@ -1,14 +1,14 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
-
 buildscript {
     ext {
-        kotlin_version = '1.5.20'
-        koin_version = '2.1.4'
+        kotlin_version = '1.9.25'
+        koin_version = '3.2.0'
         multidex_version = '2.0.1'
         retrofit_version = '2.7.0'
         glide_version = '4.11.0'
         viewmodel_version = '2.2.0'
         nav_version = '2.3.0-alpha04'
+        agp_version = '8.9.1'
     }
 
     repositories {
@@ -16,9 +16,10 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath "com.android.tools.build:gradle:4.2.1"
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.31"
+        classpath "com.android.tools.build:gradle:$agp_version"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.25"
         classpath 'com.google.firebase:firebase-crashlytics-gradle:2.2.0'
+        classpath 'org.jetbrains.kotlin:compose-compiler-gradle-plugin:2.0.21'
 
     }
 }

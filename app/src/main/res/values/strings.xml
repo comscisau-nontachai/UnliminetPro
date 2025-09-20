@@ -7,4 +7,8 @@
     <string name="version_app_menu">เวอร์ชัน 1.0.0</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="message_no_internet">Connection Lost</string>
+    <string name="message_please_check_no_internet">Please check your internet connection and then try again.</string>
 </resources>
