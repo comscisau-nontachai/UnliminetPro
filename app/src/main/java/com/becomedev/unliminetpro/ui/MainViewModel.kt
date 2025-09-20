@@ -1,8 +1,10 @@
 package com.becomedev.unliminetpro.ui
 
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
+import com.becomedev.unliminetpro.data.enums.NetworkCompEnum
 import com.becomedev.unliminetpro.data.model.PromotionModel
 import com.becomedev.unliminetpro.network.UiState
 import com.becomedev.unliminetpro.repository.PackageRepository
@@ -18,13 +20,22 @@ class MainViewModel(private val repository: PackageRepository): ViewModel() {
         getPackageTrueMove()
     }
 
-    fun getPackageTrueMove() {
+    fun getPackageTrueMove(companyNameId : Int = NetworkCompEnum.TRUE.ordinal) {
         viewModelScope.launch {
             _truemove.value = UiState.Loading
+
             try {
-                // 2. เรียกใช้ Repository เพื่อดึงข้อมูล
-                val result = repository.getPackageTrueMove()
-                _truemove.value = result
+                when(companyNameId){
+                    NetworkCompEnum.TRUE.ordinal -> {
+                        fetchTrueMoveData()
+                    }
+                    NetworkCompEnum.AIS.ordinal -> {
+                        fetchAisData()
+                    }
+                    NetworkCompEnum.DTAC.ordinal -> {
+                        fetchDtacData()
+                    }
+                }
             } catch (e: Exception) {
                 // 3b. ถ้าล้มเหลว อัปเดต State เป็น Error พร้อมข้อความ
                 _truemove.value = UiState.Error(e.message ?: "An unknown error occurred")
@@ -33,14 +44,23 @@ class MainViewModel(private val repository: PackageRepository): ViewModel() {
 
     }
 
+    private suspend fun fetchTrueMoveData(){
+        val result = repository.getPackageTrueMove()
+        _truemove.value = result
+    }
+
+    private suspend fun fetchAisData(){
+        val result = repository.getPackageAis()
+        _truemove.value = result
+    }
+
+    private suspend fun fetchDtacData(){
+        val result = repository.getPackageDtac()
+        _truemove.value = result
+    }
+
+
+
 }
 
-class MainViewModelFactory(private val repo: PackageRepository) : ViewModelProvider.Factory {
-    override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(MainViewModel::class.java)) {
-            return MainViewModel(repo) as T
-        }
-        throw IllegalArgumentException("Unknown ViewModel class")
-    }
-}
 

@@ -1,5 +1,11 @@
 package com.becomedev.unliminetpro.ui.home
 
+import android.Manifest
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.net.Uri
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -37,25 +43,30 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.graphics.vector.VectorPainter
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.core.content.ContextCompat
 import androidx.navigation.NavHostController
 import com.becomedev.unliminetpro.R
 import com.becomedev.unliminetpro.data.model.NetworkPromotionModel
 import com.becomedev.unliminetpro.data.model.PromotionModel
 import com.becomedev.unliminetpro.network.UiState
 import com.becomedev.unliminetpro.ui.MainViewModel
+import com.becomedev.unliminetpro.ui.TwoButtonDialog
+import com.becomedev.unliminetpro.ui.theme.ButtonDarkBlue
+import com.becomedev.unliminetpro.ui.theme.ButtonDarkGreen
 import com.becomedev.unliminetpro.ui.theme.ButtonDarkRed
 import com.becomedev.unliminetpro.ui.theme.UnliminetProTheme
 import com.becomedev.unliminetpro.ui.theme.fontDefault
 import org.koin.androidx.compose.koinViewModel
 
 @Composable
-fun HomeScreen(navController: NavHostController , viewModel: MainViewModel = koinViewModel(), ) {
+fun HomeScreen(navController: NavHostController, viewModel: MainViewModel = koinViewModel()) {
     UnliminetProTheme {
         var selectedIndex by remember { mutableStateOf(0) }
         val uiState by viewModel.truemove.collectAsState()
@@ -65,6 +76,8 @@ fun HomeScreen(navController: NavHostController , viewModel: MainViewModel = koi
             bottomBar = {
                 BottomNavigationBar(selectedIndex) { index ->
                     selectedIndex = index
+
+                    viewModel.getPackageTrueMove(index)
                 }
             },
         ) { innerPadding ->
@@ -76,10 +89,11 @@ fun HomeScreen(navController: NavHostController , viewModel: MainViewModel = koi
                 contentAlignment = Alignment.Center
             ) {
 
-                when(uiState){
+                when (uiState) {
                     is UiState.Loading -> {
                         CircularProgressIndicator()
                     }
+
                     is UiState.Error -> {
                         Text(
                             text = (uiState as UiState.Error).message,
@@ -87,6 +101,7 @@ fun HomeScreen(navController: NavHostController , viewModel: MainViewModel = koi
                             modifier = Modifier.padding(top = 8.dp)
                         )
                     }
+
                     is UiState.Success -> {
                         val dataList = (uiState as UiState.Success<PromotionModel>).data
                         LazyColumn {
@@ -135,7 +150,25 @@ fun BottomNavigationBar(selectedIndex: Int, onItemSelected: (Int) -> Unit) {
 }
 
 @Composable
-fun PackageCardItem(packageItem : NetworkPromotionModel) {
+fun PackageCardItem(packageItem: NetworkPromotionModel) {
+
+    val context = LocalContext.current
+    var showDialog by remember { mutableStateOf(false) }
+    var hasPermission by remember {
+        mutableStateOf(
+            ContextCompat.checkSelfPermission(context,Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED
+        )
+    }
+    val launcher = rememberLauncherForActivityResult(
+        contract = ActivityResultContracts.RequestPermission()
+    ) { granted ->
+        hasPermission = granted
+        if (granted) {
+            val intent = Intent(Intent.ACTION_CALL, Uri.parse("tel:${packageItem.tel}"))
+            context.startActivity(intent)
+        }
+    }
+
     ElevatedCard(
         onClick = {},
         colors = androidx.compose.material3.CardDefaults.elevatedCardColors(containerColor = Color.White),
@@ -145,7 +178,11 @@ fun PackageCardItem(packageItem : NetworkPromotionModel) {
             .padding(horizontal = 12.dp)
     ) {
         Column(modifier = Modifier.padding(16.dp)) {
-            Text(text = "${packageItem.price} บาท / ${packageItem.day} วัน", fontSize = 22.sp, fontWeight = FontWeight.ExtraBold)
+            Text(
+                text = "${packageItem.price} บาท / ${packageItem.day} วัน",
+                fontSize = 22.sp,
+                fontWeight = FontWeight.ExtraBold
+            )
             Spacer(modifier = Modifier.height(14.dp))
 
             //internet
@@ -155,7 +192,7 @@ fun PackageCardItem(packageItem : NetworkPromotionModel) {
             )
             Spacer(modifier = Modifier.height(8.dp))
 
-            if(packageItem.freeCall.isNotEmpty()) {
+            if (packageItem.freeCall.isNotEmpty()) {
                 //free_call
                 PackageDetailItem(
                     icon = painterResource(R.drawable.ic_phone_call) as VectorPainter,
@@ -165,7 +202,7 @@ fun PackageCardItem(packageItem : NetworkPromotionModel) {
             }
 
 
-            if(packageItem.freeWifi.isNotEmpty()) {
+            if (packageItem.freeWifi.isNotEmpty()) {
                 //free_wifi
                 PackageDetailItem(
                     icon = painterResource(R.drawable.ic_wifi) as VectorPainter,
@@ -182,10 +219,20 @@ fun PackageCardItem(packageItem : NetworkPromotionModel) {
                 title = "ราคารวมภาษี $totalPrice บาท"
             )
 
+            val btnColor = when (packageItem.name) {
+                "true" -> ButtonDarkRed
+                "ais" -> ButtonDarkGreen
+                else -> ButtonDarkBlue
+            }
+
             Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.CenterEnd) {
-                ElevatedButton(onClick = {}, colors = ButtonDefaults.elevatedButtonColors(
-                    containerColor = ButtonDarkRed
-                )) {
+                ElevatedButton(
+                    onClick = {
+                        showDialog = true
+                    }, colors = ButtonDefaults.elevatedButtonColors(
+                        containerColor = btnColor
+                    )
+                ) {
                     Icon(Icons.Default.Call, contentDescription = "สมัครเลย", tint = Color.White)
                     Spacer(modifier = Modifier.width(12.dp))
                     Text("สมัครเลย", fontFamily = fontDefault, color = Color.White)
@@ -193,7 +240,31 @@ fun PackageCardItem(packageItem : NetworkPromotionModel) {
             }
         }
     }
+
+    //confirm dialog
+    if (showDialog) {
+        TwoButtonDialog(
+            title = "สมัครโปรโมชัน",
+            message = "ต้องการสมัครโปร ${packageItem.qtyNet} ${packageItem.speedNet} ราคา ${packageItem.price} บาท ใช่หรือไม่?",
+            confirmText = "สมัครเลย",
+            dismissText = "ยกเลิก",
+            onConfirm = {
+                showDialog = false
+
+                if (hasPermission) {
+                    val intent = Intent(Intent.ACTION_CALL, Uri.parse("tel:${packageItem.tel}"))
+                    context.startActivity(intent)
+                } else {
+                    launcher.launch(Manifest.permission.CALL_PHONE)
+                }
+
+            },
+            onDismiss = { /* handle dismiss */ showDialog = false },
+            onDismissRequest = { showDialog = false }
+        )
+    }
 }
+
 
 @Composable
 fun PackageDetailItem(icon: VectorPainter, title: String) {
@@ -213,6 +284,7 @@ fun PackageDetailItem(icon: VectorPainter, title: String) {
         )
     }
 }
+
 
 
 
